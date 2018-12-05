@@ -1,7 +1,7 @@
 export default function cred() {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'dev') {
         return {
-            port: 9001,
+            port: process.env.PORT,
             db: {
                 mongodb: {
                     url: process.env.DB_HOST,
@@ -15,7 +15,7 @@ export default function cred() {
         }
     } else if (process.env.NODE_ENV === 'prod') {
         return {
-            port: 9001,
+            port: process.env.PORT,
             db: {
                 mongodb: {
                     url: process.env.DB_HOST,

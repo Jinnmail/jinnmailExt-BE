@@ -1,12 +1,13 @@
 import mongoose from '../db/db'
 
-const aliasAccountSchema = mongoose.Schema({
-    URL: {
+const proxyMailSchema = mongoose.Schema({
+    aliasId: {
         type: String,
         required: true
     },
-    aliasId: {
+    proxyMail: {
         type: String,
+        lowercase: true,
         required: true
     },
     created: {
@@ -15,7 +16,7 @@ const aliasAccountSchema = mongoose.Schema({
     }
 });
 
-const aliasAccount = mongoose.model('aliasAccount', aliasAccountSchema);
+const proxyMail = mongoose.model('proxyMail', proxyMailSchema);
 
-export default aliasAccount;
+export default proxyMail;
 

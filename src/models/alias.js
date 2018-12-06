@@ -11,6 +11,11 @@ const aliasSchema = mongoose.Schema({
         lowercase: true,
         required: [true, 'alias field is Required']
     },
+    siteUrl: {
+        type: String,
+        lowercase: true,
+        required: false
+    },
     created: {
         type: Date,
         default: Date.now
